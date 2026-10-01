@@ -7,6 +7,9 @@ import userRoutes from "./routes/user.routes.js";
 
 dotenv.config();
 
+const port = process.env.PORT || 9090;
+const dbUrl = process.env.MONGO_URL;
+
 const app = express();
 
 app.use(cors());
@@ -17,9 +20,9 @@ app.use(userRoutes);
 app.use(express.static("uploads"));
 
 const start = async () => {
-    const connectDB = await mongoose.connect("mongodb+srv://manju_db:qzmanju48@proconnect.qvk4lsf.mongodb.net/?appName=proConnect");
+    const connectDB = await mongoose.connect(dbUrl);
 
-    app.listen(9090, () => {
+    app.listen(port, () => {
         console.log("Server is running on port 9090");
     });
 }
