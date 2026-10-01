@@ -1,0 +1,66 @@
+POST http://localhost:9090/register HTTP/1.1
+content-Type: application/json
+
+{
+    "username": "mm",
+    "password": "mm",
+    "email": "mm@gmail.com",
+    "name": "mm"
+}
+
+###
+
+POST http://localhost:9090/login HTTP/1.1
+content-Type: application/json
+
+{
+    "email": "m@gmail.com",
+    "password": "m"
+}
+
+###
+
+POST http://localhost:9090/login HTTP/1.1
+content-Type: application/json
+
+{
+    "email": "mm@gmail.com",
+    "password": "mm"
+}
+
+###
+
+GET http://localhost:9090/get_user_and_profile
+Content-Type: application/json
+
+{
+    "token": "d18fad8324eb7b029405e99565110ce5b74f67313256a5c0c1f6c6c686663b3b"
+}
+
+###
+
+POST http://localhost:9090/update_profile_data
+Content-Type: application/json
+
+{
+    "token": "f13c7dfd16e249203b6d6934e845e79b2b1737d71c871f7d8990c3047c3e6b11",
+    "bio": "Hey I Am Neha, I am from Delhi, I work in XYZ Company, I am a true learner of Apna College.",
+    "currentPost": "CTO",
+    "pastWork": [
+        {
+            "company": "Microsoft",
+            "position": "CTO",
+            "years": "2"
+        }
+    ],
+    "education": [
+        {
+            "school": "IIIT",
+            "degree": "B.tech",
+            "fieldOfStudy": "2015-2019"
+        }
+    ]
+}
+
+###
+GET http://localhost:9090/user/get_all_users
